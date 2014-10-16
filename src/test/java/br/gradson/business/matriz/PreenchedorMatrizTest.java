@@ -47,7 +47,7 @@ public class PreenchedorMatrizTest {
 	}
 	
 	@Test
-	public void deveRetornarAPenltimaCelulaComLinha3eColuna1AoBuscarVerticeInferiorDeUmaMatriz3Por4() {
+	public void deveRetornarAPenultimaCelulaComLinha3eColuna1AoBuscarVerticeInferiorDeUmaMatriz3Por4() {
 		int valorInicial = 7;
 		List<Celula> celulas = preenchedor.preencherVerticeInferior(TAMANHO_LINHA, TAMANHO_COLUNA, valorInicial);
 		Celula celula = celulas.get(1);
@@ -55,5 +55,16 @@ public class PreenchedorMatrizTest {
 		assertEquals(3, celula.getLinha());
 		assertEquals(1, celula.getColuna());
 		assertEquals(8, celula.getValor());
+	}
+	
+	@Test
+	public void deveRetornarUltimaPosicaoDoVerticeEsquerdoQuandoMatriz3Por4() {
+		int valorInicial = 8;
+		List<Celula> celulas = preenchedor.preencherVerticeEsquerdo(TAMANHO_LINHA, TAMANHO_COLUNA, valorInicial);
+		Celula celula = celulas.get(2);
+		
+		assertEquals(1, celula.getLinha());
+		assertEquals(0, celula.getColuna());
+		assertEquals(10, celula.getValor());
 	}
 }

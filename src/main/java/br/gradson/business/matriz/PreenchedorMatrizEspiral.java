@@ -44,6 +44,17 @@ public class PreenchedorMatrizEspiral {
 		return celulas;
 	}
 
+	public List<Celula> preencherVerticeEsquerdo(int tamanhoLinha,	int tamanhoColuna, int valorInicial) {
+		ArrayList<Celula> celulas = new ArrayList<Celula>();
+		
+		for(int linha = tamanhoColuna - 1; linha >= 1; linha--) {
+			celulas.add(new Celula(linha, 0, valorInicial));
+			valorInicial++;
+		}
+		
+		return celulas;
+	}
+
 	
 
 }
